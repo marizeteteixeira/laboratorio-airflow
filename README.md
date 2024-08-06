@@ -2,6 +2,13 @@
 
 Este repositório contém uma configuração do Apache Airflow utilizando Docker e Docker Compose, com integração ao MySQL para armazenamento de dados. O projeto inclui DAGs de exemplo para ingestão de dados a partir de uma API pública e armazenamento no banco de dados MySQL.
 
+## Requisitos Mínimos
+
+- Docker (versão 20.10 ou superior)
+- Docker Compose (versão 1.29 ou superior)
+- Python (versão 3.9 ou superior, se desejar executar scripts localmente)
+- Acesso à internet para baixar imagens e dependências
+
 ## Estrutura do Projeto
 
 ```
@@ -26,6 +33,17 @@ Para inicializar o serviço, utilize o comando:
 
 ```shell
 docker compose -f docker/docker-compose.yml up --build
+```
+
+> *Caso não funcione o comando acima*, utilize `docker-compose` no lugar de `docker compose`
+
+Usar `Ctrl+C` para parar a execução do ambiente
+
+## Parar remover os containers do Ambiente
+
+Para parar todos os contêineres do ambiente, utilize o comando:
+```shell
+docker compose -f docker/docker-compose.yml down
 ```
 
 ## Criar o Usuário para Fazer Login no Airflow
