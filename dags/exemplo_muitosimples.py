@@ -1,5 +1,5 @@
 from airflow import DAG
-from airflow.operators.dummy_operator import DummyOperator
+from airflow.operators.empty import EmptyOperator
 from airflow.utils.dates import days_ago
 
 # Definindo os argumentos padrão para as tarefas do DAG
@@ -21,12 +21,12 @@ dag = DAG(
 )
 
 # Definindo tarefas
-start = DummyOperator(
+start = EmptyOperator(
     task_id='start',
     dag=dag,
 )
 
-end = DummyOperator(
+end = EmptyOperator(
     task_id='end',
     dag=dag,
 )
